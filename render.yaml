@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: digital-shadow
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: NEBIUS_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: DEMO_ACCESS_PASSWORD
+        sync: false
+      - key: NEBIUS_BASE_URL
+        value: https://api.tokenfactory.us-central1.nebius.com/v1/
+      - key: NEBIUS_MODEL_ID
+        value: nvidia/Nemotron-3-Ultra-550b-a55b
+      - key: DIGITAL_SHADOW_DB
+        value: /tmp/digital_shadow.sqlite3
+      - key: FRONTEND_ORIGINS
+        value: ""

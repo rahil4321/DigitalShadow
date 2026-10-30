@@ -141,6 +141,27 @@ The default landing view opens the Scenario Studio. Describe a disruption in pla
 6. **Nemotron analyst (optional):** explains the numerical selection. It cannot override Python's choice.
 7. **SQLite approval:** saves the scenario snapshot. `/api/execute` requires a strategy ID belonging to that exact snapshot, serializes concurrent approvals, and allows one approval. It then runs a fixed-seed simulation for the audit trail.
 
+## NVIDIA and Nebius Integration
+
+Digital Shadow uses NVIDIA's Nemotron model, `nvidia/Nemotron-3-Ultra-550b-a55b`, through Nebius Token Factory.
+
+**NVIDIA Nemotron**
+- Used for interpreting natural-language business scenarios and supporting structured decision reasoning.
+- Helps translate business context into actionable scenario information.
+
+**Nebius Token Factory**
+- Provides hosted access to NVIDIA Nemotron through an OpenAI-compatible inference API.
+- Eliminates the need to run the large model locally, allowing us to focus development resources on the application, simulation engine and integration workflow.
+- Enabled rapid experimentation with model-powered scenario interpretation and decision workflows.
+
+**Tavily**
+- Integrated for external research into relevant business and supply-chain developments.
+- Retrieved sources are presented as evidence within the research workflow.
+
+**Simulation Engine**
+- Evaluates alternative business actions and compares their potential financial and operational consequences.
+- Keeps numerical outcome evaluation separate from language-model-generated reasoning.
+
 ## Verification
 
 ```bash
